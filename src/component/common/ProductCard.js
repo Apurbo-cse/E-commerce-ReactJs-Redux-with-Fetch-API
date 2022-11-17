@@ -16,7 +16,7 @@ const ProductCard = ({ props }) => {
               {props.title.substring(0, 20)}...
             </h5>
             <p className="card-text lead fw-bold">${props.price}</p>
-            <a href="#" className="btn btn-outline-dark">
+            <a href="#" className="btn btn-outline-warning">
               Buy Now
             </a>
           </div>
