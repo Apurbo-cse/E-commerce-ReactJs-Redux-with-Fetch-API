@@ -7,10 +7,19 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
+  const [cartBtn, setCartBtn] = useState("Add to Cart");
+
+  const handleCart = (product) => {
+    if (cartBtn === "Add to Cart") {
+      setCartBtn("Remove from Cart");
+    } else {
+      setCartBtn("Add to Cart");
+    }
+  };
 
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
-     setLoading(false);
+      setLoading(false);
       if (res.status === 200) {
         setProduct(res.data);
       }
@@ -67,7 +76,10 @@ const ProductDetails = () => {
           </p>
           <h3 className="display-6 fw-bold my-4">$ {product?.price}</h3>
           <p className="lead">{product?.description}</p>
-          <button className="btn btn-outline-dark px-4 py-2">
+          <button
+            className="btn btn-outline-dark px-4 py-2"
+            noClick={() => handleCart(product)}
+          >
             Add to Cart
           </button>
           <NavLink to="/cart" className="btn btn-dark ms-2 px-3">
