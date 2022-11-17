@@ -6,7 +6,7 @@ export const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
         <div className="container">
           <a className="navbar-brand fw-bold fs-4" href="#">
-            Yoo Shop
+            SHOP
           </a>
           <button
             className="navbar-toggler"
@@ -49,10 +49,12 @@ export const Navbar = () => {
                 <i className="fa fa-sign-in me-1" aria-hidden="true"></i> Login
               </a>
               <a href="" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-user-plus me-1" aria-hidden="true"></i> Signup
+                <i className="fa fa-user-plus me-1" aria-hidden="true"></i>{" "}
+                Signup
               </a>
               <a href="" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-cart-plus me-1" aria-hidden="true"></i> Cart (0)
+                <i className="fa fa-cart-plus me-1" aria-hidden="true"></i> Cart
+                (0)
               </a>
             </div>
           </div>
