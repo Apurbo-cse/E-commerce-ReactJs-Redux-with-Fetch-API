@@ -2,37 +2,20 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import { NavLink, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addCart } from "./redux/action";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const dispatch = useDispatch();
-  const addProduct = (product) => {
-    dispatch(addCart(product));
-  };
-
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
-      setLoading(false);
+     setLoading(false);
       if (res.status === 200) {
         setProduct(res.data);
       }
     });
   }, []);
-
-  //   useEffect(() => {
-  //     fetch(`https://fakestoreapi.com/products/${id}`).then((res) => res.json());
-
-  //     setLoading(false)
-  //       .then((data) => {
-  //         setProduct(data);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }, []);
 
   //  useEffect(() => {
   //    const getProduct = async () => {
@@ -84,10 +67,7 @@ const ProductDetails = () => {
           </p>
           <h3 className="display-6 fw-bold my-4">$ {product?.price}</h3>
           <p className="lead">{product?.description}</p>
-          <button
-            className="btn btn-outline-dark px-4 py-2"
-            onClick={() => addProduct(product)}
-          >
+          <button className="btn btn-outline-dark px-4 py-2">
             Add to Cart
           </button>
           <NavLink to="/cart" className="btn btn-dark ms-2 px-3">
