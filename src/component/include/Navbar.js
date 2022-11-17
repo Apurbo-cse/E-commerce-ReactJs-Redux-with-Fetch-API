@@ -6,12 +6,12 @@ export const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
         <div className="container">
-          <NavLink className="navbar-brand fw-bold fs-4" to="#">
+          <NavLink className="navbar-brand fw-bold fs-4" to="/">
             SHOP
           </NavLink>
           <button
             className="navbar-toggler"
-            type="button"
+            type="button" 
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
